@@ -1,6 +1,7 @@
 import {  Fragment, useState,useEffect } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import UserImage from "../../images/user.png"
 
 import {
   BellIcon,
@@ -148,13 +149,11 @@ export default function DashBoardNav(props:any) {
          <div className="flex-shrink-0 flex items-center px-4">
 
          <div
-           className={classNames(
-                               'rounded-lg inline-flex p-1 ring-4 ring-black'
-           )}
+         
          >  
 
-       <CurrencyDollarIcon className="h-8 w-8 text-black" />
-    </div>
+<img crossOrigin  className="cursor-pointer h-8 w-8 rounded-full" 
+                        src={UserImage.src} alt="" />     </div>
     <div>
    <h1 className="px-4 text-2xl tracking-tight font-extrabold text-white sm:text-2xl md:text-2xl">
 
@@ -171,7 +170,7 @@ export default function DashBoardNav(props:any) {
                  key={item.name}
                  href={item.href}
                  className={classNames(
-                router.pathname == item.href ? 'bg-black text-white' : 'text-black hover:text-white hover:bg-black',
+                router.pathname == item.href ? 'bg-black text-white' : 'text-white hover:text-white hover:bg-black',
                    'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                  )}
                  aria-current={(router.pathname == item.href ? true :false)}
@@ -212,13 +211,11 @@ export default function DashBoardNav(props:any) {
   <div className="flex items-center flex-shrink-0 px-4 "  >
  
        <div
-           className={classNames(
-                               'rounded-lg inline-flex p-1 ring-4 ring-black'
-           )}
+         
          >  
 
-       <CurrencyDollarIcon className="h-8 w-8 text-black" />
-    </div>
+<img crossOrigin  className="cursor-pointer  h-8 w-8 rounded-full" 
+                        src={UserImage.src} alt="" />    </div>
     <div>
    <h1 className="px-4 text-2xl tracking-tight font-extrabold text-white sm:text-2xl md:text-2xl">
 
@@ -234,7 +231,7 @@ XFund   </h1>
                key={item.name}
                href={item.href}
                className={classNames(
-                router.pathname == item.href  ? 'bg-black text-white' : 'text-black hover:text-white hover:bg-black',
+                router.pathname == item.href  ? 'bg-black text-white' : 'text-white hover:text-white hover:bg-black',
                  'group flex items-center px-2 py-2 text-sm leading-6 font-medium rounded-md'
                )}
                aria-current={(router.pathname == item.href ? true :false)}
