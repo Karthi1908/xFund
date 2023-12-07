@@ -12,9 +12,12 @@ import { ethers } from 'ethers';
 import { XFundAddress,XFundABI } from "../../contract";
 import { useNetwork } from 'wagmi'
 import { polygonMumbai } from "viem/chains";
+import { useSigner } from "../../hooks/useEthersAccounts";
+
 export default function EditXFund() {
   const { address, isConnecting, isDisconnected } = useAccount()
   const { chain } = useNetwork()
+  const signer = useSigner();
 
   const { data: walletClient } = useWalletClient()
   const XFundPicRef = useRef("");
@@ -110,7 +113,7 @@ export default function EditXFund() {
        const startdate = new Date().getTime()
 
        setNotificationTitle("Create XFund")
-       const contract = new ethers.Contract(XFundAddress, XFundABI, walletClient);
+       const contract = new ethers.Contract(XFundAddress, XFundABI, signer);
       // Subscribe to the event
        contract.on('NewFund', (fundId, participants, numberOfCycles, amountToBePaid, startDate, event) => {
         console.log('New Fund Created:', fundId.toNumber());
