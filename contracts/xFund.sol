@@ -1,14 +1,14 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0;
 
 
 //import '@openzeppelin/contracts/access/Ownable.sol';
 //import "@openzeppelin/contracts/utils/ReentrancyGuard.sol";
 import "./ICreditScore.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v4.8.0/contracts/token/ERC20/IERC20.sol";
 
 
-contract ChitFund   {
+contract xFund   {
     
     uint fundId = 100000;
     IERC20 USDC ;
@@ -118,8 +118,8 @@ contract ChitFund   {
 
     function makePayment(uint _fundId, uint _cycleId) public {
 
-        require(USDC.balanceOf(msg.sender) >= fundDetails[_fundId].payAmount, "Insufficient Balance");
-        USDC.transferFrom(msg.sender, address(this), fundDetails[fundId].payAmount);
+        require(USDC.balanceOf(msg.sender) >= fundDetails[_fundId].payAmount , "Insufficient Balance");
+        USDC.transferFrom(msg.sender, address(this), fundDetails[fundId].payAmount * 10**18);
         fundDetails[_fundId].balance += fundDetails[_fundId].payAmount;
         paymentDetails[_fundId][msg.sender] += fundDetails[_fundId].payAmount; 
         cycleDetails[_fundId][_cycleId].amount += fundDetails[_fundId].payAmount;   
@@ -135,7 +135,7 @@ contract ChitFund   {
         uint currentCycle = (fundDetails[_fundId].startDate - block.timestamp) / 60 / 60 / 24 / fundDetails[_fundId].frequency;
         require(cycleDetails[_fundId][currentCycle].cycleWinner == address(0), 'Winner Declared Already');
         checkForDefault(_fundId);
-        uint winningIndex = block.prevrandao % len;
+        uint winningIndex = block.difficulty % len;
         cycleDetails[_fundId][currentCycle].cycleWinner = qualified[_fundId][winningIndex];
         removeAddressFromQualified(_fundId,qualified[_fundId][winningIndex] );
 
