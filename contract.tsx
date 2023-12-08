@@ -13,7 +13,21 @@ export const XFundAddress = "0x6BC7eccc559Da4b65b7c53a6f85Fd39951D9A2C8"
 
 
 
-
+export const creditScoreAddress = "0x62e8c0Bd049b68f0b5845FF8b6C67d3A187D7894"
+export const creditScoreABI = [
+    "function balanceOf(address owner) external view returns (uint256)",
+    "function ownerOf(uint256 tokenId) external view returns (address)",
+    "function approve(address to, uint256 tokenId) external",
+    "function getApproved(uint256 tokenId) external view returns (address)",
+    "function setApprovalForAll(address operator, bool approved) external",
+    "function isApprovedForAll(address owner, address operator) external view returns (bool)",
+    "function transferFrom(address from, address to, uint256 tokenId) external",
+    "function safeTransferFrom(address from, address to, uint256 tokenId) external",
+    "function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) external",
+    "function totalSupply() external view returns (uint256)",
+    "function tokenByIndex(uint256 index) external view returns (uint256)",
+    "function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)"
+  ]
 
 
 export const usdcContractAddress = "0x2A1761AA41Db546E9EA08Da411F1430f2e2d3fdC"
