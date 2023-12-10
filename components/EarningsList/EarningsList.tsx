@@ -94,7 +94,7 @@ export default function EarningsList() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {people.map((fund) => (
+                  {earnings.map((fund) => (
                     <tr key={fund.datewithdrawn} >
                      
                       <td

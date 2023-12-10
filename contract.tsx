@@ -1,4 +1,4 @@
-export const XFundAddress = "0x6BC7eccc559Da4b65b7c53a6f85Fd39951D9A2C8"
+export const XFundAddress = "0xd9E4F98fd967449bAc59C8666Be0cBDA2ea9ba07"
 
  export const XFundABI = ["function newChit(address[] memory _participants , uint _cycleCount, uint _frequency, uint _amount) public",
 "function withdrawCycleAmount(uint _fundId, uint _cycleId) public",
@@ -13,7 +13,7 @@ export const XFundAddress = "0x6BC7eccc559Da4b65b7c53a6f85Fd39951D9A2C8"
 
 
 
-export const creditScoreAddress = "0x62e8c0Bd049b68f0b5845FF8b6C67d3A187D7894"
+export const creditScoreAddress = "0xa1A12162204A28b9e76Fcebd4066EFeC6C44B611"
 export const creditScoreABI = [
     "function balanceOf(address owner) external view returns (uint256)",
     "function ownerOf(uint256 tokenId) external view returns (address)",
@@ -26,11 +26,13 @@ export const creditScoreABI = [
     "function safeTransferFrom(address from, address to, uint256 tokenId, bytes memory data) external",
     "function totalSupply() external view returns (uint256)",
     "function tokenByIndex(uint256 index) external view returns (uint256)",
-    "function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)"
+    "function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256)",
+    "function tokenURI(uint256 _tokenId) public view virtual override returns (string memory)"
+
   ]
 
 
-export const usdcContractAddress = "0x2A1761AA41Db546E9EA08Da411F1430f2e2d3fdC"
+export const usdcContractAddress = "0x03f6D79DC9B64bcC762Bd8c1256B9619492A398C"
 export const usdcContractABI =
 [
    {

@@ -19,21 +19,7 @@ import { XFundABI,XFundAddress } from '../../contract';
 import { queryXFundPayments } from '../../tableland/tableland';
 import { format } from 'date-fns';
 
-const people = [
-  {
-    name: 'Lindsay Walton',
-    datepaid:1701978822096,
-    amount: '$100',
-    cycle:1
-  },
-  {
-    name: 'Lindsay Walton',
-    datepaid: 1701978822096,
-    amount: '$100',
-    cycle:1
-  },
-  // More people...
-]
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -92,7 +78,7 @@ export default function PaymentList() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
-                  {people.map((fund) => (
+                  {payments.map((fund) => (
                     <tr key={fund.datepaid} >
                      
                       <td

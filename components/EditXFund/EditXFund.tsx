@@ -114,7 +114,8 @@ export default function EditXFund() {
        
   
        var  participants= data.participants.split('\n'); // Split text into an array of lines
- 
+       const amount = ethers.utils.parseUnits(data.amount, 18);
+
        const tx = await contract.callStatic.newChit(participants, data.cycleCount, data.frequency, data.amount,{ gasLimit: 21000000  });
        const transaction = await contract.newChit(participants, data.cycleCount, data.frequency, data.amount,{ gasLimit: 21000000  });
        await transaction.wait(); // Wait for the transaction to be mined

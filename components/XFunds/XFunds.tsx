@@ -125,7 +125,7 @@ import { useSigner } from "../../hooks/useEthersAccounts";
                 }
               );
         
-              let tx3 = await payContract.callStatic.makePayment(
+              let tx3 = await payContract.makePayment(
                 _fund.id,cycle,
                   {
                   gasLimit: 3000000,
